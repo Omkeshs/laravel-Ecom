@@ -1,9 +1,39 @@
 ### About Project
+
 Product Service : It Provides information about the product like availability, price, category.
 
 Order service: It Provides information about the order like Order Value, DispatchDate, Order Status, Product Quantity.
 
 User able to get the product catalogue and using that info should be able to place an order.
+
+**API Based Routing** 
+
+
+
+## [Controller:](https://github.com/Omkeshs/laravel-Ecom/tree/main/app/Http/Controllers)
+
+
+<pre>
+1.OrderController
+2.ProductController
+
+</pre>
+
+
+## [Route:](https://github.com/Omkeshs/laravel-Ecom/blob/main/routes/api.php)
+
+<pre>
+// Product APIs
+Route::get('/product', [ProductController::class,'ListProduct']);
+Route::post('/product', [ProductController::class,'UpdateProduct']);
+
+// Order APIs
+Route::get('/order', [OrderController::class,'ListOrder']);
+Route::post('/order', [OrderController::class,'PlaceOrder']);
+Route::put('/order/{id}', [OrderController::class,'UpdateOrder'],['id' => 0]);
+Route::delete('/order/{id}', [OrderController::class,'DeleteOrder'],['id' => 0]);
+</pre>
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
